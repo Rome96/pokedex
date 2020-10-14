@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fire } from './conf/firebase'
 import Auth from './components/Auth'
-import Navbar from './components/Navbar';
 import { useForm } from './hooks/useForm';
 import './App.css';
+import { AppRoute } from "./AppRoute";
 
 function App() {
   const [value, handleInputChange, reset] = useForm({ email: '', password: '' });
@@ -49,14 +49,6 @@ function App() {
       });
   };
 
-  const handleLogout = () => {
-    fire.auth().signOut()
-  };
-
-  // const authListener = () => {
-    
-  // };
-
   const authListener = () => {
     fire.auth().onAuthStateChanged(user => {
       if (user) {
@@ -72,17 +64,15 @@ function App() {
     authListener();
   }, [])
 
-  console.log('SE MONTO EN COMPONENTE')
   return (
     <div className="App">
       { user ? (
-        <Navbar handleLogout={handleLogout} />
+        <AppRoute />
       ) : (  
         <Auth
           value={value}
           handleInputChange={handleInputChange}
           errors={errors}
-          // setErrors={setErrors}
           handleLogin={handleLogin}
           handleSignup={handleSignup}
           hasAccount={hasAccount}

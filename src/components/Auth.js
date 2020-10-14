@@ -46,7 +46,7 @@ const Auth = props => {
           {
             hasAccount ? (
               <>
-                <button onClick={handleLogin}>Sing in</button>
+                <button className='button-login' onClick={handleLogin}>Sing in</button>
                 <p>
                   Don't have an account ?
                   <span onClick={() => setHasAccount(!hasAccount)}>Sing up</span>
@@ -54,7 +54,7 @@ const Auth = props => {
               </>
             ) : (
               <>
-                <button onClick={handleSignup}>Sing up</button>
+                <button className='button-login' onClick={handleSignup}>Sing up</button>
                 <p>
                   Have an account ?
                   <span onClick={() => setHasAccount(!hasAccount)}>Sing in</span>

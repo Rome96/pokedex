@@ -5,7 +5,7 @@
   font-family: Arial, Helvetica, sans-serif
 }
 
-button {
+.button-login {
   border: none;
   outline: none;
   width: 100%;
@@ -91,32 +91,44 @@ button {
   font-size: 16px;
 }
 
-.hero {
-  width: 100%;
-  min-height: 100vh;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
   background: radial-gradient(
     ellipse at left bottom,
-    rgba(22, 24, 47, 1) 0%,
-    rgba(38, 20, 72, 0.9) 59%,
-    rgba(17, 27, 75, 0.9) 100%
+    rgb(8, 8, 8) 0%,
+    rgba(44, 44, 44, 0.9) 59%,
+    rgba(67, 68, 71, 0.9) 100%
   );
 }
 
-.hero nav {
-  background: #603bbb;
-  width: 100%;
-  padding: 20px 40px;
+nav ul li{
+   list-style: none;
+   margin: 50px 20px ;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.nav-items {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
 }
 
-.hero nav h2 {
-  color: #fff;
+.btn-logout {
+  height: 40px;
+  width: 100px;
+  align-items: center;
+  cursor: pointer;
+  background-color: aliceblue;
+  border-radius: 5px;
 }
 
-.hero nav button {
-  width: 86px;
-  padding: 8px 0;
-  background: #3a2b58;
-}
+

@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import { fire } from './conf/firebase'
 import Auth from './components/Auth'
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import { useForm } from './hooks/useForm';
-
 import './App.css';
 
 function App() {
@@ -45,7 +44,6 @@ function App() {
         if (e.code === 'auth/invalid-email' || 'auth/email-already-in-use') {
           setErrors({...errors, emailError: e.message });
         } else if (e.code === 'auth/weak-password') {
-          console.log('mensage err:', e.message)
           setErrors({ ...errors, passwordError: e.message });
         };
       });
@@ -54,6 +52,10 @@ function App() {
   const handleLogout = () => {
     fire.auth().signOut()
   };
+
+  // const authListener = () => {
+    
+  // };
 
   const authListener = () => {
     fire.auth().onAuthStateChanged(user => {
@@ -67,16 +69,14 @@ function App() {
   };
 
   useEffect(() => {
-    authListener()
-  }, []);
+    authListener();
+  }, [])
 
-console.log('email', value.email)
-console.log('passdowr', value.password);
-
+  console.log('SE MONTO EN COMPONENTE')
   return (
     <div className="App">
       { user ? (
-        <Header handleLogout={handleLogout} />
+        <Navbar handleLogout={handleLogout} />
       ) : (  
         <Auth
           value={value}

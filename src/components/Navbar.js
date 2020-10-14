@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = ({ handleLogout }) => {
+const Navbar = ({ handleLogout }) => {
   return (
     <section className="hero">
       <nav>
@@ -11,4 +11,4 @@ const Header = ({ handleLogout }) => {
   );
 };
 
-export default Header;
+export default Navbar;

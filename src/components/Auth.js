@@ -21,22 +21,25 @@ const Auth = props => {
   return (
     <section className='login'>
       <div className='loginContainer'>
-        <p className='errorMsg'>{errors.emailError}</p> <br/><br/>
-        <label>Username</label>
+      <label>{hasAccount ? 'Login' : 'Register'}</label> <hr/>
+        <p className='errorMsg'>{errors.emailError}</p> <br/> <br/>
+        <label>Email</label>
         <input
+          required
+          autoFocus
           type='text'
           name='email'
           value={value.email}
-          autoFocus
-          required
+          placeholder='example@email.com'
           onChange={handleInputChange}
         />
         <label>Password</label>
         <input
+          required
           type='password'
           name='password'
           value={value.password}
-          required
+          placeholder='*********'
           onChange={handleInputChange}
         />
         <div className='btnContainer'>

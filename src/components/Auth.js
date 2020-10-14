@@ -21,7 +21,7 @@ const Auth = props => {
   return (
     <section className='login'>
       <div className='loginContainer'>
-      <label>{hasAccount ? 'Login' : 'Register'}</label> <hr/>
+      <label>{hasAccount ? 'Login' : 'Register'}</label> <hr/> <br/>
         <p className='errorMsg'>{errors.emailError}</p> <br/> <br/>
         <label>Email</label>
         <input

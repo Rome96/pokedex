@@ -4,7 +4,7 @@ const Header = ({ handleLogout }) => {
   return (
     <section className="hero">
       <nav>
-        <h2>Wellwome</h2>
+        <h2>Welwome</h2>
         <button onClick={handleLogout}>Logout</button>
       </nav>
     </section>

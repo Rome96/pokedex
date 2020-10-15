@@ -1,9 +1,12 @@
 import React from 'react'
+import CardPoke from '../components/CardPoke';
+import SearchPoke  from '../components/SearchPoke';
 
 const HomeScreen = () => {
   return (
-    <div>
-      <h2>Home screen</h2>
+    <div className='container'>
+      <SearchPoke/>
+      <CardPoke />
     </div>
   );
 };

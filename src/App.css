@@ -4,6 +4,9 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif
 }
+.container {
+  padding: 10px 40px;
+}
 
 .button-login {
   border: none;
@@ -131,4 +134,45 @@ nav ul li a{
   border-radius: 5px;
 }
 
+/* ============== */
 
+input {
+  width: 90%;
+  padding: 8px;
+  font-size: 1rem;
+  color: #30475e;
+}
+
+.btn-search {
+  padding: 9px;
+  margin-left: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: radial-gradient(
+    ellipse at left bottom,
+    rgb(8, 8, 8) 0%,
+    rgba(44, 44, 44, 0.9) 59%,
+    rgba(67, 68, 71, 0.9) 100%
+  );
+}
+
+.card {
+  margin-top: 30px;
+  display: flex;
+  width: 95%;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f5f5;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.avatar {
+  height: 300px;
+}
+
+.err {
+  color: red;
+  font-size: 20px;
+}

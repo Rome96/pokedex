@@ -1,12 +1,16 @@
-import React from 'react'
-import { useSelector } from "react-redux";
+import React, {useState} from 'react'
+import { useSelector } from 'react-redux';
 
-const CardPoke = () => {
-  const {name, img} = useSelector((state) => state.poke);
+
+const CardPoke = ({name, img}) => {
+
   return (
-    <div className="card animate__animated animate__backInDown animate__delay-6s">
-      <h2>{name}</h2>
-      <img src={img} className='avatar animate__animated animate__backInDown animate__delay-6s' />
+    <div className="card  animate__animated animate__backInDown animate__delay-6s">
+      <h4>{name}</h4>
+      <img
+        src={img}
+        className="animate__animated animate__backInDown animate__delay-6s"
+      />
     </div>
   );
 };

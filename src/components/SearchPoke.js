@@ -20,13 +20,12 @@ const SearchPoke = () => {
     if (input.trim() === '') {
       return;
     } {
-      const res = await api.getPoke(input);
-      console.log(res)
-      // return;
+      const res = await api.getPokeName(input);
       if (res !== undefined) {
         setLoading(false);
         setErr(false)
         const pokemon = {
+          id: res.id,
           name: res.species.name,
           img: res.sprites.front_shiny,
         };

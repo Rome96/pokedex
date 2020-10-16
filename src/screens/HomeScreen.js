@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { api } from "../api";
 import CardPoke from '../components/CardPoke';
 import SearchPoke  from '../components/SearchPoke';
-import { getPoke } from "../redux/actions";
+import { getPokeAll } from "../redux/actions";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
   const pokeList = useSelector((state) => state.pokeList);
   const [image, setImage] = useState({})
 
-  const getPokeAll = async () => {
+  const _getPokeAll = async () => {
     const res = await api.getPokeAll();
     const data = res.results;
     data.forEach(async ({url}) => {
@@ -28,7 +28,7 @@ const HomeScreen = () => {
       img: res.sprites.front_shiny,
     };
 
-    dispatch(getPoke(pokemon));
+    dispatch(getPokeAll(pokemon));
     // await getPokeImg(id)
   }
 
@@ -43,11 +43,11 @@ const HomeScreen = () => {
   console.log(image);
 
   useEffect(() => {
-    getPokeAll()
+    _getPokeAll()
   }, [])
 
   return <>
-    {/* <SearchPoke /> */}
+    <h3>List Pokemon</h3> <hr/><br/>
     <div className="card-grid">
       {pokeList.map(({ name, img, id }) => (
         <div>

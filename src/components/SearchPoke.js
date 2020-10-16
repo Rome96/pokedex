@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { api } from "../api";
+import CardPoke from "./CardPoke";
 import {getPoke} from '../redux/actions'
 
 const SearchPoke = () => {
@@ -8,6 +9,8 @@ const SearchPoke = () => {
   const [input, setInput] = useState('pikachu');
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState(false)
+  const {name, img} = useSelector(state => state.poke)
+
   const handleInputChange = (e) => {
     setErr(false)
     const texInput = e.target.value;
@@ -35,6 +38,7 @@ const SearchPoke = () => {
         setLoading(false);
         setInput('')
         const pokemon = {
+          id: '',
           name: '',
           img: '',
         };
@@ -55,6 +59,11 @@ const SearchPoke = () => {
         />
         <button className='btn-search' onClick={handleSubmit}>Search</button>
       </form>
+
+      <CardPoke
+        name={name}
+        img={img}
+      />
     </div>
   );
 };

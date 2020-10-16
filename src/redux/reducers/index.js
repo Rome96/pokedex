@@ -1,19 +1,25 @@
-import { GET_POKE } from '../constants/action-types';
+import { GET_POKE, GET_POKE_All } from "../constants/action-types";
 
 const initialState = {
-  pokeList: []
+  pokeList: [],
+  poke: {},
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_POKE:
+    case GET_POKE_All:
       return {
         ...state,
         pokeList: state.pokeList.concat(action.payload),
       };
-
+    case GET_POKE:
+      return {
+        ...state,
+        poke: action.payload,
+      };
+    
     default:
-      break;
+       return state;
   }
   return state
 };

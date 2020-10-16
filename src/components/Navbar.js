@@ -11,6 +11,7 @@ const Navbar = () => {
     <nav className='navbar'>
       <ul className='nav-items'>
         <li><Link to='/'>Pokedex</Link></li>
+        <li><Link to='/search' className='searchIcon'> search..<i class="material-icons md-48">search</i></Link></li>
       </ul>
       <button className='btn-logout' onClick={handleLogout}>
         Logout

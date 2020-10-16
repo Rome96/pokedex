@@ -5,12 +5,9 @@ import { useSelector } from 'react-redux';
 const CardPoke = ({name, img}) => {
 
   return (
-    <div className="card  animate__animated animate__backInDown animate__delay-6s">
+    <div className="card  animate__animated animate__bounceInDown">
       <h4>{name}</h4>
-      <img
-        src={img}
-        className="animate__animated animate__backInDown animate__delay-6s"
-      />
+      <img src={img} alt="avatar" />
     </div>
   );
 };

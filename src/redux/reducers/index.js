@@ -1,7 +1,7 @@
 import { GET_POKE } from '../constants/action-types';
 
 const initialState = {
-  poke: []
+  pokeList: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const rootReducer = (state = initialState, action) => {
     case GET_POKE:
       return {
         ...state,
-        poke: state.poke.concat(action.payload),
+        pokeList: state.pokeList.concat(action.payload),
       };
 
     default:

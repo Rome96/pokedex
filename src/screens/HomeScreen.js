@@ -7,7 +7,7 @@ import { getPoke } from "../redux/actions";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  const poke = useSelector((state) => state.poke);
+  const pokeList = useSelector((state) => state.pokeList);
   const [image, setImage] = useState({})
 
   const getPokeAll = async () => {
@@ -47,9 +47,9 @@ const HomeScreen = () => {
   }, [])
 
   return <>
-    <SearchPoke />
+    {/* <SearchPoke /> */}
     <div className="card-grid">
-      {poke.map(({ name, img, id }) => (
+      {pokeList.map(({ name, img, id }) => (
         <div>
           <CardPoke key={id} img={img} name={name} />
         </div>

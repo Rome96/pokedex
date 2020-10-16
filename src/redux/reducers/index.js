@@ -11,6 +11,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         pokeList: state.pokeList.concat(action.payload),
+        // pokeList: [...action.payload]
       };
     case GET_POKE:
       return {

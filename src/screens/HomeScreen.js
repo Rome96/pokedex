@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { api } from "../api";
 import CardPoke from '../components/CardPoke';
@@ -8,7 +8,6 @@ import { getPokeAll } from "../redux/actions";
 const HomeScreen = () => {
   const dispatch = useDispatch();
   const pokeList = useSelector((state) => state.pokeList);
-  const [image, setImage] = useState({})
 
   const _getPokeAll = async () => {
     const res = await api.getPokeAll();
@@ -40,14 +39,13 @@ const HomeScreen = () => {
     
   // }
 
-  console.log(image);
-
   useEffect(() => {
     _getPokeAll()
   }, [])
 
   return <>
     <h3>List Pokemon</h3> <hr/><br/>
+    <SearchPoke/>
     <div className="card-grid">
       {pokeList.map(({ name, img, id }) => (
         <div>

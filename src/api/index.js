@@ -4,7 +4,7 @@ export const api = {
 
    async getPokeAll() {
     try {
-      const res = await fetch(`${URL}/?limit=50`);
+      const res = await fetch(`${URL}/?limit=11`);
       const response = await res.json();
       if (res.status === HTTP_STATUSES.OK) {
         return response;
